@@ -1,6 +1,7 @@
 <?php 
 
-$str_score = 'X7/9-X-88/-6XXX81';
+$str_score = getopt("s:");
+//'X7/9-X-88/-6XXX81';
 //$str_score = '5/5/5/5/5/5/5/5/5/5/5';
 //$str_score = '9-9-9-9-9-9-9-9-9-9-';
 //$str_score = 'XXXXXXXXXXXX';
@@ -8,8 +9,8 @@ $str_score = 'X7/9-X-88/-6XXX81';
 /* Take a string of a valid score in US Bowling
  * and create an array of the frames
  */
-echo "bowling score string:" . $str_score . "\n";
-$throws = preg_split('//', $str_score, -1, PREG_SPLIT_NO_EMPTY);
+echo "bowling score string:" . $str_score['s'] . "\n";
+$throws = preg_split('//', $str_score['s'], -1, PREG_SPLIT_NO_EMPTY);
 $frame = 1;
 $frames = array();
 $firstball = true;
